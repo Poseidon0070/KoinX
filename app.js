@@ -16,7 +16,7 @@ app.use(cors())
 app.use(route)
 
 // scheduling currency update every hour
-cron.schedule('8 * * * *', updateCryptoCurrencies) 
+cron.schedule('0 * * * *', updateCryptoCurrencies) 
 
 mongoose.connect(MongoURI)
 .then(() => {
