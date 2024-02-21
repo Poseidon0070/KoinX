@@ -12,12 +12,11 @@ const app = express()
 const PORT = process.env.PORT || 3000
 const MongoURI = process.env.MONGO_URI
 app.use(bodyParser.json())
-app.use(cors())
+app.use(cors()) 
 app.use(route)
 
 // scheduling currency update every hour
-cron.schedule('0 * * * *', updateCryptoCurrencies) 
-
+cron.schedule('8 * * * *', updateCryptoCurrencies) 
 
 mongoose.connect(MongoURI)
 .then(() => {
@@ -26,6 +25,6 @@ mongoose.connect(MongoURI)
     }) 
 })
 .catch((err) => {
-    console.log(err)
+    console.log(err) 
 }) 
 

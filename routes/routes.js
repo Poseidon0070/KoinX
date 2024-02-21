@@ -3,6 +3,8 @@ const controller = require('../controller/controller')
 
 const route = express.Router()
 
-route.get('/update-cryptocurrencies', controller.updateCryptoCurrencies)
+route.get('/companies-public-treasury', controller.getHoldingCompanies)
+
+route.get('/convert-currency', controller.convertCurrency)
 
 module.exports = route
